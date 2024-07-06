@@ -153,8 +153,19 @@ const QuestionPage = () => {
     return (
       <main>
         <div className="flex flex-col items-center">
-          <section>
-            {questionNumber + 1} / 20
+          <section className="flex items-center justify-center p-5">
+            <button className="border border-black rounded-full text-xs h-8 w-8"
+                    onClick={() => {
+                      if (questionNumber === 0) {
+                        return;
+                      }
+                      setQuestionNumber(questionNumber - 1);
+                    }}
+            >←</button>
+            <div className="min-w-72 h-8 mx-2 bg-gray-200 rounded-full">
+              <div className="h-full min-w-8 bg-blue-500 rounded-full" style={{ width: `${(questionNumber) * 5}%` }}></div>
+            </div>
+            <div className="w-8"></div>
           </section>
           <section className="flex flex-col items-center p-10">
             <h3 className="text-2xl">Q{questionNumber + 1}.</h3>
@@ -163,11 +174,11 @@ const QuestionPage = () => {
             </h4>
           </section>
           <section className="flex flex-col items-center w-full p-10">
-            <button className="w-full border border-black px-8 py-2 m-1" onClick={() => { answerClickHandler(1); }}>매우 아니다</button>
-            <button className="w-full border border-black px-8 py-2 m-1" onClick={() => { answerClickHandler(2); }}>아니다</button>
-            <button className="w-full border border-black px-8 py-2 m-1" onClick={() => { answerClickHandler(3); }}>보통이다</button>
-            <button className="w-full border border-black px-8 py-2 m-1" onClick={() => { answerClickHandler(4); }}>그렇다</button>
-            <button className="w-full border border-black px-8 py-2 m-1" onClick={() => { answerClickHandler(5); }}>매우 그렇다</button>
+            <button className="w-full border border-black px-8 py-2 m-1 max-w-96" onClick={() => { answerClickHandler(1); }}>매우 아니다</button>
+            <button className="w-full border border-black px-8 py-2 m-1 max-w-96" onClick={() => { answerClickHandler(2); }}>아니다</button>
+            <button className="w-full border border-black px-8 py-2 m-1 max-w-96" onClick={() => { answerClickHandler(3); }}>보통이다</button>
+            <button className="w-full border border-black px-8 py-2 m-1 max-w-96" onClick={() => { answerClickHandler(4); }}>그렇다</button>
+            <button className="w-full border border-black px-8 py-2 m-1 max-w-96" onClick={() => { answerClickHandler(5); }}>매우 그렇다</button>
           </section>
         </div>
       </main>
