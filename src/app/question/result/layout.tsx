@@ -1,5 +1,7 @@
-const MainLayout = ({ children }: { children: React.ReactNode }) => {
-  return <div className="h-full">{children}</div>
+import { Suspense } from "react";
+
+const QuestionResultLayout = ({ children }: { children: React.ReactNode }) => {
+  return <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>;
 }
 
-export default MainLayout
+export default QuestionResultLayout
