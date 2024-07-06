@@ -163,7 +163,7 @@ const QuestionPage = () => {
                     }}
             >←</button>
             <div className="min-w-72 h-8 mx-2 bg-gray-200 rounded-full">
-              <div className="h-full min-w-8 bg-blue-500 rounded-full" style={{ width: `${(questionNumber) * 5}%` }}></div>
+              <div className="h-full min-w-8 bg-blue-500 rounded-full" style={{ width: `${(questionNumber) * 4.7 + 8}%` }}></div>
             </div>
             <div className="w-8"></div>
           </section>
