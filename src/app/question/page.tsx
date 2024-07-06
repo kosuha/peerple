@@ -151,10 +151,10 @@ const QuestionPage = () => {
 
   const questionComponent = () => {
     return (
-      <main>
+      <main className="">
         <div className="flex flex-col items-center">
           <section className="flex items-center justify-center p-5">
-            <button className="border border-black rounded-full text-xs h-8 w-8"
+            <button className="border border-black rounded-full text-xs h-7 w-7"
                     onClick={() => {
                       if (questionNumber === 0) {
                         return;
@@ -162,10 +162,10 @@ const QuestionPage = () => {
                       setQuestionNumber(questionNumber - 1);
                     }}
             >←</button>
-            <div className="min-w-72 h-8 mx-2 bg-gray-200 rounded-full">
-              <div className="h-full min-w-8 bg-blue-500 rounded-full" style={{ width: `${(questionNumber) * 4.7 + 8}%` }}></div>
+            <div className="min-w-64 h-7 mx-1 bg-gray-200 rounded-full">
+              <div className="h-full min-w-7 bg-blue-500 rounded-full" style={{ width: `${(questionNumber) * 4.7 + 8}%` }}></div>
             </div>
-            <div className="w-8"></div>
+            <div className="w-7"></div>
           </section>
           <section className="flex flex-col items-center p-10">
             <h3 className="text-2xl">Q{questionNumber + 1}.</h3>
