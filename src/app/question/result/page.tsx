@@ -69,7 +69,7 @@ const QuestionResultPage = () => {
       }
     }
   };
-
+  
   const getMaxAttribute = () => {
     const attributes = [
       { name: '성과', value: income },
@@ -78,10 +78,21 @@ const QuestionResultPage = () => {
       { name: '균형', value: balance },
       { name: '복지', value: perks }
     ];
-    return attributes.reduce((max, attr) => attr.value > max.value ? attr : max);
+    
+    const maxAttr = attributes.reduce((max, attr) => attr.value > max.value ? attr : max);
+    const minAttr = attributes.reduce((min, attr) => attr.value < min.value ? attr : min);
+    
+    // 최대값과 최소값의 차이가 1 이하인 경우 'balanced'를 반환
+    if (maxAttr.value - minAttr.value <= 1) {
+      return { name: 'balanced', value: maxAttr.value };
+    }
+    
+    return maxAttr;
   };
-
+  
   const getResultDescription = () => {
+    const maxAttribute = getMaxAttribute();
+    
     switch(maxAttribute.name) {
       case '성과':
         return "당신은 성과 지향적인 문화를 선호합니다. 높은 성과에 따른 보상과 인정을 중요하게 여기며, 도전적인 목표를 달성하는 것에 가치를 둡니다.";
@@ -93,6 +104,7 @@ const QuestionResultPage = () => {
         return "당신은 일과 삶의 균형을 중요하게 여깁니다. 유연한 근무 환경과 개인 시간을 존중하는 문화에서 더 높은 생산성과 만족도를 보일 것 같습니다.";
       case '복지':
         return "당신은 회사의 복지와 사내 문화를 중요하게 여깁니다. 직원을 배려하는 다양한 복지 제도가 있는 회사에서 더 큰 소속감과 만족감을 느낄 것 같습니다.";
+      case 'balanced':
       default:
         return "당신의 컬쳐핏은 다양한 요소들이 균형잡힌 모습을 보입니다. 다양한 환경에서 잘 적응할 수 있을 것 같습니다.";
     }

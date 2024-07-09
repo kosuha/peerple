@@ -4,13 +4,54 @@ import React, { useState } from 'react';
 
 const MainPage = () => {
   const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const fetchEmail = async (email: string) => {
+    setIsLoading(true);
+    const url = "https://16m1evfr39.execute-api.ap-northeast-2.amazonaws.com/production/regist_email";
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ data: email }),
+    }
+
+    try {
+      const response = await fetch(url, fetchOptions);
+      const data = await response.json();
+      setEmail('');
+      alert('알림 신청이 완료되었습니다. 감사합니다!');
+    } catch (error) {
+      console.error('Error:', error);
+      alert('알림 신청 중 오류가 발생했습니다. 다시 시도해 주세요.');
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log('Submitted email:', email);
-    setEmail('');
-    alert('알림 신청이 완료되었습니다. 감사합니다!');
+    fetchEmail(email);
   };
+
+  // 버튼 컴포넌트
+  const SubmitButton = ({ isLoading, children }: { isLoading: boolean, children: React.ReactNode }) => (
+    <button
+      type="submit"
+      className={`bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-md text-lg ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+      disabled={isLoading}
+    >
+      {isLoading ? (
+        <span className="flex flex-col items-center">
+          <svg className="animate-spin -ml-1 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+        </span>
+      ) : children}
+    </button>
+  );
 
   return (
     <div className="bg-gradient-to-b from-blue-50 to-white min-h-screen font-sans">
@@ -22,14 +63,14 @@ const MainPage = () => {
 
       <main className="container mx-auto px-6 py-12">
         <section className="text-center mb-16">
-          <h2 className="text-5xl font-extrabold text-gray-800 mb-6 leading-tight">
+          <h2 className="text-5xl font-extrabold text-gray-800 mb-6 leading-tight text-wrap">
             인재 추천을 위한 <span className="text-blue-600">비지니스 네트워킹</span>
           </h2>
-          <p className="text-2xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          <p className="text-2xl text-gray-600 mb-10 max-w-2xl mx-auto text-wrap">
             채용은 함께 일할 동료를 찾는 과정이 돼야합니다.
           </p>
           <div className="max-w-md mx-auto">
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 h-14">
               <input
                 type="email"
                 value={email}
@@ -38,18 +79,15 @@ const MainPage = () => {
                 required
                 className="flex-grow px-6 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md text-lg"
               />
-              <button
-                type="submit"
-                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-md text-lg"
-              >
-                출시 알림 받기
-              </button>
+              <SubmitButton isLoading={isLoading}>
+                출시 알림받기
+              </SubmitButton>
             </form>
           </div>
         </section>
 
         {/* 컬쳐핏 진단 테스트 섹션 */}
-        <section className="bg-gradient-to-r from-blue-400 to-indigo-600 text-white py-16 rounded-3xl mb-16">
+        <section className="bg-gradient-to-r from-blue-400 to-indigo-600 text-white py-16 px-4 rounded-3xl mb-16">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">나의 컬쳐핏 찾기</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -84,7 +122,7 @@ const MainPage = () => {
           </p>
         </section>
 
-        <section className="text-center bg-gradient-to-r from-blue-500 to-blue-600 text-white py-16 px-16 rounded-3xl">
+        <section className="text-center bg-gradient-to-r from-blue-500 to-pink-400 text-white py-16 px-8 rounded-3xl">
           <h2 className="text-3xl font-bold mb-6">곧 출시됩니다!</h2>
           <p className="text-left text-xl mb-8 max-w-2xl mx-auto">
             채용의 미래를 함께 만들어갈 준비가 되셨나요? 지금 출시 알림을 신청하고 사전 신청 혜택을 누리세요.
@@ -98,12 +136,9 @@ const MainPage = () => {
               required
               className="flex-grow px-6 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-md text-lg text-gray-800"
             />
-            <button
-              type="submit"
-              className="bg-white text-blue-600 font-bold py-3 px-8 rounded-full transition duration-300 shadow-md hover:bg-blue-50 text-lg"
-            >
+            <SubmitButton isLoading={isLoading}>
               알림 신청하기
-            </button>
+            </SubmitButton>
           </form>
         </section>
       </main>
