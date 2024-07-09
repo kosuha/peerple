@@ -39,7 +39,7 @@ const MainPage = () => {
   const SubmitButton = ({ isLoading, children }: { isLoading: boolean, children: React.ReactNode }) => (
     <button
       type="submit"
-      className={`bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-md text-lg ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+      className={`bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 h-14 rounded-full transition duration-300 shadow-md text-lg ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
       disabled={isLoading}
     >
       {isLoading ? (
@@ -70,14 +70,14 @@ const MainPage = () => {
             채용은 함께 일할 동료를 찾는 과정이 돼야합니다.
           </p>
           <div className="max-w-md mx-auto">
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 h-14">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="이메일 주소를 입력하세요"
                 required
-                className="flex-grow px-6 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md text-lg"
+                className="flex-grow px-6 py-3 h-14 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md text-lg"
               />
               <SubmitButton isLoading={isLoading}>
                 출시 알림받기
@@ -134,7 +134,7 @@ const MainPage = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="이메일 주소를 입력하세요"
               required
-              className="flex-grow px-6 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-md text-lg text-gray-800"
+              className="flex-grow px-6 py-3 h-14 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-md text-lg text-gray-800"
             />
             <SubmitButton isLoading={isLoading}>
               알림 신청하기
