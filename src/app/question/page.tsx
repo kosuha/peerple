@@ -5,102 +5,102 @@ import { useRouter } from 'next/navigation';
 
 const questions = [
   {
-    "q": "연봉 수준이 낮더라도 원만한 관계의 팀원과 일하는 것이 좋다.",
+    "q": "팀 분위기가 좋다면 연봉이 조금 낮아도 괜찮다고 생각한다.",
     "a": 0,
     "info": ["r", "i"]
   },
   {
-    "q": "나의 비전과 커리어 성장이 동료와의 원만한 관계보다 우선이다.",
+    "q": "개인의 성장 기회가 동료와의 관계보다 더 중요하다고 본다.",
     "a": 0,
     "info": ["v", "r"]
   },
   {
-    "q": "좋은 동료와 일하는 것이 복지와 사내문화보다 중요하다.",
+    "q": "동료와의 관계가 회사의 복지 제도보다 업무 만족도에 더 큰 영향을 미친다.",
     "a": 0,
     "info": ["r", "p"]
   },
   {
-    "q": "좋은 동료와 함께 일한다면 야근이 많아도 괜찮다.",
+    "q": "팀워크가 좋다면 업무 시간이 길어져도 감내할 수 있다.",
     "a": 0,
     "info": ["r", "b"]
   },
   {
-    "q": "낮은 연봉을 받더라도 비전이 있고 커리어 성장이 가능한 회사에 가고싶다.",
+    "q": "미래가 밝은 스타트업이라면 연봉이 낮아도 선택할 것이다.",
     "a": 0,
     "info": ["v", "i"]
   },
   {
-    "q": "높은 급여을 받는다면 좋은 복지는 포기할 수 있다.",
+    "q": "연봉이 높다면 회사의 복리후생이 부족해도 참을 수 있다.",
     "a": 0,
     "info": ["i", "p"]
   },
   {
-    "q": "연봉만 높다면 야근은 충분히 할 수 있다.",
+    "q": "급여가 만족스럽다면 초과 근무도 기꺼이 할 수 있다.",
     "a": 0,
     "info": ["i", "b"]
   },
   {
-    "q": "커리어 성장이 가능한 회사라면 복지와 사내문화가 나빠도 괜찮다.",
+    "q": "전문성을 키울 수 있는 환경이라면 회사의 분위기가 딱딱해도 견딜 만하다.",
     "a": 0,
     "info": ["v", "p"]
   },
   {
-    "q": "커리어 성장을 위해서 워라밸은 포기해야한다.",
+    "q": "자기 발전을 위해서는 개인 시간을 어느 정도 포기할 수 있다.",
     "a": 0,
     "info": ["v", "b"]
   },
   {
-    "q": "복지와 사내문화가 좋은 팀이라면 야근을 불사하고 일 할 수 있다.",
+    "q": "회사의 복지가 훌륭하다면 업무 강도가 높아도 수용할 수 있다.",
     "a": 0,
     "info": ["p", "b"]
   },
   {
-    "q": "높은 연봉을 받는 것이 유능하고 함께하고 싶은 동료보다 중요하다.",
+    "q": "연봉수준이 높은 회사가 유능하고 친절한 동료들과 일할 수 있는 회사보다 더 매력적이다.",
     "a": 0,
     "info": ["i", "r"]
   },
   {
-    "q": "유능하고 좋은 동료와 함께라면 커리어 계획은 어느정도 포기 할 수 있다.",
+    "q": "뛰어난 동료들과 일할 수 있다면 나의 경력 계획을 조정할 수 있다.",
     "a": 0,
     "info": ["r", "v"]
   },
   {
-    "q": "복지와 사내문화가 좋은 팀이라면 동료가 마음에 들지 않아도 괜찮다.",
+    "q": "회사의 제도와 문화가 좋다면 팀 구성원들이 마음에 들지 않아도 감수할 수 있다.",
     "a": 0,
     "info": ["p", "r"]
   },
   {
-    "q": "워라밸이 좋은 팀이라면 동료가 마음에 들지 않아도 상관없다.",
+    "q": "일과 삶의 균형이 잡혀있다면 동료들과의 관계가 서먹해도 견딜 만하다.",
     "a": 0,
     "info": ["b", "r"]
   },
   {
-    "q": "비전이 다르고 커리어 성장이 힘든 회사여도 연봉을 많이 받는다면 괜찮다.",
+    "q": "고연봉이라면 자기 계발의 기회가 적어도 받아들일 수 있다.",
     "a": 0,
     "info": ["i", "v"]
   },
   {
-    "q": "복지와 사내문화가 좋다면 낮은 연봉을 감수 할 수 있다.",
+    "q": "회사의 복지 제도가 잘 갖춰져 있다면 연봉이 조금 낮아도 선택할 것이다.",
     "a": 0,
     "info": ["p", "i"]
   },
   {
-    "q": "워라밸이 좋다면 연봉이 낮아도 상관없다.",
+    "q": "개인 생활과 업무의 균형이 잘 잡혀있다면 연봉이 조금 낮아도 만족할 수 있다.",
     "a": 0,
     "info": ["b", "i"]
   },
   {
-    "q": "복지와 사내문화가 비전과 커리어 성장보다 중요하다.",
+    "q": "회사의 분위기와 직원 혜택이 개인의 성장 기회보다 더 중요하다고 생각한다.",
     "a": 0,
     "info": ["p", "v"]
   },
   {
-    "q": "워라밸이 커리어 성장과 비전보다 중요하다.",
+    "q": "일과 삶의 균형이 개인의 커리어 성장보다 우선시되어야 한다고 본다.",
     "a": 0,
     "info": ["b", "v"]
   },
   {
-    "q": "워라밸이 좋은 회사라면 복지와 사내문화가 안좋아도 상관없다.",
+    "q": "근무 시간이 유연하다면 회사의 복리후생이 부족해도 감수할 수 있다.",
     "a": 0,
     "info": ["b", "p"]
   }
@@ -136,14 +136,13 @@ const QuestionPage = () => {
       setQuestionNumber(questionNumber + 1);
     }
   }
-
+  
   const loadingComponent = () => {
     return (
-      <main>
-        <div className="flex flex-col items-center">
-          <section>
-            Loading...
-          </section>
+      <main className="flex items-center justify-center h-screen bg-gradient-to-b from-blue-100 to-white">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+          <p className="mt-4 text-xl text-blue-600 font-semibold">결과를 분석하고 있습니다...</p>
         </div>
       </main>
     )
@@ -151,34 +150,43 @@ const QuestionPage = () => {
 
   const questionComponent = () => {
     return (
-      <main className="">
-        <div className="flex flex-col items-center">
-          <section className="flex items-center justify-center p-5">
-            <button className="border border-black rounded-full text-xs h-7 w-7"
-                    onClick={() => {
-                      if (questionNumber === 0) {
-                        return;
-                      }
-                      setQuestionNumber(questionNumber - 1);
-                    }}
-            >←</button>
-            <div className="min-w-64 h-7 mx-1 bg-gray-200 rounded-full">
-              <div className="h-full min-w-7 bg-blue-500 rounded-full" style={{ width: `${(questionNumber) * 4.7 + 8}%` }}></div>
+      <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-10">
+        <div className="max-w-2xl mx-auto px-4">
+          <section className="mb-8">
+            <div className="flex items-center justify-between mb-2">
+              <button 
+                className="text-blue-500 hover:text-blue-600 transition-colors duration-200"
+                onClick={() => {
+                  if (questionNumber === 0) return;
+                  setQuestionNumber(questionNumber - 1);
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <span className="text-sm text-gray-600 font-medium">{questionNumber + 1} / 20</span>
             </div>
-            <div className="w-7"></div>
+            <div className="w-full bg-gray-200 rounded-full h-2.5">
+              <div className="bg-blue-500 h-2.5 rounded-full transition-all duration-300 ease-out" style={{ width: `${(questionNumber + 1) * 5}%` }}></div>
+            </div>
           </section>
-          <section className="flex flex-col items-center p-10">
-            <h3 className="text-2xl">Q{questionNumber + 1}.</h3>
-            <h4 className="text-xl">
-              {questions[questionNumber].q ? questions[questionNumber].q : ""}
+          <section className="text-center mb-10">
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">Q{questionNumber + 1}.</h3>
+            <h4 className="text-xl text-gray-700 leading-relaxed">
+              {questions[questionNumber].q}
             </h4>
           </section>
-          <section className="flex flex-col items-center w-full p-10">
-            <button className="w-full border border-black px-8 py-2 m-1 max-w-96" onClick={() => { answerClickHandler(1); }}>매우 아니다</button>
-            <button className="w-full border border-black px-8 py-2 m-1 max-w-96" onClick={() => { answerClickHandler(2); }}>아니다</button>
-            <button className="w-full border border-black px-8 py-2 m-1 max-w-96" onClick={() => { answerClickHandler(3); }}>보통이다</button>
-            <button className="w-full border border-black px-8 py-2 m-1 max-w-96" onClick={() => { answerClickHandler(4); }}>그렇다</button>
-            <button className="w-full border border-black px-8 py-2 m-1 max-w-96" onClick={() => { answerClickHandler(5); }}>매우 그렇다</button>
+          <section className="space-y-3">
+            {['매우 아니다', '아니다', '보통이다', '그렇다', '매우 그렇다'].map((answer, index) => (
+              <button 
+                key={index}
+                className="w-full bg-white border border-gray-300 text-gray-700 py-3 px-6 rounded-lg shadow-sm hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:outline-none focus:ring-0"
+                onClick={() => { answerClickHandler(index + 1); }}
+              >
+                {answer}
+              </button>
+            ))}
           </section>
         </div>
       </main>
