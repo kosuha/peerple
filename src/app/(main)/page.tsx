@@ -67,7 +67,7 @@ const MainPage = () => {
             인재 추천을 위한 <span className="text-blue-600">비지니스 네트워킹</span>
           </h2>
           <p className="text-2xl text-gray-600 mb-10 max-w-2xl mx-auto text-wrap">
-            채용은 함께 일할 동료를 찾는 과정이 돼야합니다.
+            peerple은 실무자들이 직접 동료를 찾을 수 있는 비지니스 네트워킹 플랫폼입니다.
           </p>
           <div className="max-w-md mx-auto">
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">

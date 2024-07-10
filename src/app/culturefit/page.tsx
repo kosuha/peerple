@@ -30,7 +30,7 @@ const CulturefitPage = () => {
           </div>
         </section>
         <section className="mb-8">
-          <p className="text-gray-700 text-center leading-relaxed">
+          <p className="text-gray-700 text-left leading-relaxed">
             컬쳐핏 진단 테스트는 당신의 가치관, 선호도, 행동 패턴을 분석하여 
             어떤 기업 문화를 선호하는지 알아봅니다. 
             자신에게 맞는 회사를 찾고 싶다면 지금 시작해보세요!
