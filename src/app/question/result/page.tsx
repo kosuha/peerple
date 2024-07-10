@@ -117,7 +117,7 @@ const QuestionResultPage = () => {
       <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-6">
         <h1 className="text-3xl font-bold text-center text-blue-600 mb-8">컬쳐핏 진단 결과</h1>
         
-        <section className="m-20">
+        <section className="m-2">
           <Radar data={data} options={options} className="mb-6"/>
           
           <p className="text-lg text-gray-700 leading-relaxed">
