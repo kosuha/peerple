@@ -63,10 +63,12 @@ const MainPage = () => {
 
       <main className="container mx-auto px-6 py-12">
         <section className="text-center mb-16">
-          <h2 className="text-5xl font-extrabold text-gray-800 mb-6 leading-tight text-wrap">
-            인재 추천을 위한 <span className="text-blue-600">비지니스 네트워킹</span>
+          <h2 className="text-4xl font-extrabold text-gray-800 mb-6 leading-tight text-wrap">
+            <span>인재 추천을 위한</span>
+            <br />
+            <span className="text-blue-600">비지니스 네트워킹</span>
           </h2>
-          <p className="text-2xl text-gray-600 mb-10 max-w-2xl mx-auto text-wrap">
+          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto text-wrap">
             peerple은 실무자들이 직접 동료를 찾을 수 있는 비지니스 네트워킹 플랫폼입니다.
           </p>
           <div className="max-w-md mx-auto">
@@ -114,7 +116,7 @@ const MainPage = () => {
 
         <section className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-6">왜 peerple인가요?</h2>
-          <p className="text-left text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-left text-md text-gray-600 mb-8 max-w-3xl mx-auto">
             peerple은 채용의 불확실성을 줄이고, 구직자와 기업 모두에게 더 나은 경험을 제공합니다.
             나와 비슷한 컬쳐핏을 가진 재직자와 소통하세요.
             실무자의 직접 추천, 상세한 정보 공유, 그리고 커피챗을 통한 네트워킹으로 
@@ -125,7 +127,9 @@ const MainPage = () => {
         <section className="text-center bg-gradient-to-r from-blue-500 to-pink-400 text-white py-16 px-8 rounded-3xl">
           <h2 className="text-3xl font-bold mb-6">곧 출시됩니다!</h2>
           <p className="text-left text-xl mb-8 max-w-2xl mx-auto">
-            채용의 미래를 함께 만들어갈 준비가 되셨나요? 지금 출시 알림을 신청하고 사전 신청 혜택을 누리세요.
+            채용의 미래를 함께 만들어갈 준비가 되셨나요?
+            <br />
+            지금 출시 알림을 신청하고 사전 신청 혜택을 누리세요.
           </p>
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input

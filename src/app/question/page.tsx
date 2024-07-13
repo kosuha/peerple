@@ -181,7 +181,7 @@ const QuestionPage = () => {
             {['매우 아니다', '아니다', '보통이다', '그렇다', '매우 그렇다'].map((answer, index) => (
               <button 
                 key={index}
-                className="w-full bg-white border border-gray-300 text-gray-700 py-3 px-6 rounded-lg shadow-sm hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:outline-none focus:ring-0"
+                className="w-full bg-white border border-gray-300 text-gray-700 py-3 px-6 rounded-lg shadow-sm hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-0"
                 onClick={() => { answerClickHandler(index + 1); }}
               >
                 {answer}
